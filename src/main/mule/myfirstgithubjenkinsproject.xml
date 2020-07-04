@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="282e2597-c63a-4323-9473-29156424528c" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="myfirstgithubjenkinsprojectFlow" doc:id="b74b3b0e-d781-4f2c-bdfe-3ead1a8ccba5" >
+		<http:listener doc:name="Listener" doc:id="29bdc537-2969-4cbd-8539-178debbded5a" config-ref="HTTP_Listener_config" path="/sample"/>
+		<set-payload value='#["First Jenkins and GitHub Project"]' doc:name="Set Payload" doc:id="33bc9a6e-dbfe-4903-9f15-e751984f2b7d" />
+	</flow>
+</mule>
